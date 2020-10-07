@@ -33,7 +33,7 @@ namespace ResourceJanitor
         {
             this.ResourceId = ResourceId;
             _log.LogInformation($"Adding cleaning monitoring services for {ResourceId}");
-            ScheduledCleanup = DateTime.UtcNow.AddDays(1);
+            ScheduledCleanup = DateTime.UtcNow.AddDays(Convert.ToDouble(Environment.GetEnvironmentVariable("DEFAULT_EXPIRY_DAYS")));
             Entity.Current.SignalEntity(
                 new EntityId(nameof(SMSConversation), "default"), nameof(SMSConversation.AddResource),
                 new
