@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30605.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceJanitor", "ResourceJanitor\ResourceJanitor.csproj", "{EA615CA0-5CCA-471B-89C4-1DDF9D523B6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA615CA0-5CCA-471B-89C4-1DDF9D523B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA615CA0-5CCA-471B-89C4-1DDF9D523B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA615CA0-5CCA-471B-89C4-1DDF9D523B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA615CA0-5CCA-471B-89C4-1DDF9D523B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {987FAEBA-DBDB-4125-AB4D-9AE3E72C1032}
+	EndGlobalSection
+EndGlobal
