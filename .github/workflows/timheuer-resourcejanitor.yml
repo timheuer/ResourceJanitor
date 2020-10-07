@@ -1,4 +1,4 @@
-name: Deploy Function App (.NET Core) to timheuer-resourcejanitor
+name: Deploy Function app
 on:
   push:
     branches:
@@ -12,7 +12,7 @@ env:
   PROJECT_PATH: ''
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout GitHub Action
       uses: actions/checkout@master
