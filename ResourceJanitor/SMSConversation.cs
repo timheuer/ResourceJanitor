@@ -90,6 +90,15 @@ namespace ResourceJanitor
             );
         }
 
+        public async Task FailedAction(string resourceId)
+        {
+            int index = resourceMap.IndexOf(resourceId);
+            string resourceGroupName = resourceId.ParseResourceGroupName();
+            await SendMessage(
+                $"Cleanup of {resourceGroupName} failed. Check logs."
+            );
+        }
+
         public async Task WarnMessage(string resourceId)
         {
             int index = resourceMap.IndexOf(resourceId);

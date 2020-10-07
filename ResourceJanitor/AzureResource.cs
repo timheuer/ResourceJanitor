@@ -62,13 +62,20 @@ namespace ResourceJanitor
 
                 _log.LogInformation($"ResourceJanitor got response {response.StatusCode} with content {await response.Content.ReadAsStringAsync()}.");
 
-                // Remove this entity from the SMS history
-                Entity.Current.SignalEntity(new EntityId(nameof(SMSConversation), "default"), nameof(SMSConversation.RemoveResource), ResourceId);
+                if (response.IsSuccessStatusCode)
+                {
+                    // Remove this entity from the SMS history
+                    Entity.Current.SignalEntity(new EntityId(nameof(SMSConversation), "default"), nameof(SMSConversation.RemoveResource), ResourceId);
 
-                _log.LogInformation($"🗑 The Janitor has cleaned up {ResourceId}");
+                    _log.LogInformation($"🗑 The Janitor has cleaned up {ResourceId}");
 
-                // Remove this entity
-                Delete();
+                    // Remove this entity
+                    Delete();
+                }
+                else
+                {
+                    Entity.Current.SignalEntity(new EntityId(nameof(SMSConversation), "default"), nameof(SMSConversation.FailedAction), ResourceId);
+                }
             }
         }
 
