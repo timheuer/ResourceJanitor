@@ -3,6 +3,10 @@ on:
   push:
     branches:
     - main
+    paths-ignore:
+    - '**/*.md'
+    - '**/*.gitignore'
+    - '**/*.gitattributes'
 env:
   AZURE_FUNCTIONAPP_NAME: timheuer-resourcejanitor
   AZURE_FUNCTIONAPP_PACKAGE_PATH: ./published
